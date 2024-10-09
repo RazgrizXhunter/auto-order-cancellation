@@ -70,10 +70,10 @@ class AOC_Cron_Handler {
 
 		// Query orders on hold that should be cancelled
 		$args = [
-			'status'            => 'on-hold',
-			'date_created'      => '<=' . $cancel_date,
-			'limit'             => -1,
-			'payment_method'    => 'bacs',
+			'status'			=> 'on-hold',
+			'date_created'		=> '<=' . $cancel_date,
+			'limit'				=> -1,
+			'payment_method'	=> 'bacs',
 		];
 
 		$orders = wc_get_orders($args);
