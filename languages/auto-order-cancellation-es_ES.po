@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Auto Order Cancellation 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-07 12:00+0000\n"
-"PO-Revision-Date: 2024-10-09 17:49+0000\n"
+"PO-Revision-Date: 2024-10-09 20:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -16,11 +16,11 @@ msgstr ""
 
 #: auto-order-cancellation.php:11
 msgid "Auto Order Cancellation"
-msgstr "Cancelación Automática de Pedidos"
+msgstr "Auto Order Cancellation"
 
 #: includes/class-settings-page.php:27
 msgid "Auto Order Cancellation Settings"
-msgstr "Configuración de Cancelación Automática de Pedidos"
+msgstr "Configuración Auto Order Cancellation"
 
 #: includes/class-settings-page.php:36
 msgid "On-Hold Order Time (minutes)"
@@ -32,7 +32,7 @@ msgstr "Contenido de los logs"
 
 #: includes/class-settings-page.php:62
 msgid "The log file is empty."
-msgstr "El archivo de registro está vacío."
+msgstr "El archivo de logs está vacío."
 
 #: includes/class-settings-page.php:68
 msgid "Clear Log"
