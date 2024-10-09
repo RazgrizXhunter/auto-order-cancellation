@@ -89,12 +89,6 @@ class AOC_Cron_Handler {
 			}
 		}
 	}
-
-	// Function to delete old logs (called daily)
-	public static function cleanup_logs() {
-		AOC_Log_Manager::delete_old_logs(30); // Delete logs older than 30 days
-		AOC_Log_Manager::write("Old logs cleaned up (older than 30 days).");
-	}
 }
 
 function aoc_custom_cron_intervals($schedules) {
@@ -117,4 +111,4 @@ add_filter('cron_schedules', 'aoc_custom_cron_intervals');
 
 // Register the cron actions
 add_action('aoc_check_pending_orders', ['AOC_Cron_Handler', 'cancel_old_on_hold_orders']);
-add_action('aoc_log_cleanup', ['AOC_Cron_Handler', 'cleanup_logs']);
+add_action('aoc_log_cleanup', ['AOC_Log_Manager', 'cleanup_logs']);

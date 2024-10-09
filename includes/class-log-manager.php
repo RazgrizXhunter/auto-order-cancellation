@@ -66,6 +66,12 @@ class AOC_Log_Manager {
 			}
 		}
 	}
+
+	// Function to delete old logs (called daily)
+	public static function cleanup_logs() {
+		self::delete_old_logs(30); // Delete logs older than 30 days
+		self::write("Old logs cleaned up (older than 30 days).");
+	}
 }
 
 // Initialize the log manager
