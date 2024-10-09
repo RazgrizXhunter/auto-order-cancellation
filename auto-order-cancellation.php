@@ -5,7 +5,7 @@ Description: Automatically cancels WooCommerce orders on hold for more than a sp
 Version: 1.2
 Author: Aldo Tapia
 Text Domain: auto-order-cancellation
-Domain Path: /assets/language
+Domain Path: /languages
 */
 
 // Define constants for paths and URLs
