@@ -1,0 +1,39 @@
+/* admin-styles.css */
+
+.aoc-plugin-settings {
+    /* Plugin-specific styling */
+}
+
+.aoc-plugin-settings .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.aoc-plugin-settings .nav-tab {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.aoc-plugin-settings .nav-tab-active {
+    color: #23282d;
+    background-color: #fff;
+    border-bottom: 2px solid #0073aa;
+    font-weight: bold;
+}
+
+.aoc-plugin-settings .log-content {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-line;
+}
+
+.aoc-plugin-settings button.button {
+    margin-top: 10px;
+}
+
+.aoc-plugin-settings .notice-success {
+    margin-top: 15px;
+}
