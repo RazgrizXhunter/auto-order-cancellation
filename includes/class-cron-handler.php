@@ -55,7 +55,7 @@ class AOC_Cron_Handler {
 		}
 
 		// Retrieve the auto-cancellation time from settings
-		$time_in_minutes = get_option('auto_order_cancellation_time', 7200);
+		$time_in_minutes = get_option('auto_order_cancellation_time', 60 * 24 * 30); // Default: 30 Days
 		AOC_Log_Manager::write("Auto Order Cancellation Time (minutes): $time_in_minutes");
 
 		// Calculate the cancellation threshold
