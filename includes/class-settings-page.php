@@ -54,7 +54,7 @@ class AOC_Settings_Page {
 
 	// Render the input field for the On-Hold Order Time setting
 	public static function auto_order_cancellation_time_input() {
-		$time = get_option('auto_order_cancellation_time', 7200); // Default to 5 days
+		$time = get_option('auto_order_cancellation_time', 60 * 24 * 30); // Default to 5 days
 		echo '<input type="number" name="auto_order_cancellation_time" value="' . esc_attr($time) . '" min="1" />';
 	}
 	
