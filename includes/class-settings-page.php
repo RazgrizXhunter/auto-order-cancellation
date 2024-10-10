@@ -61,10 +61,10 @@ class AOC_Settings_Page {
 	// Render the dropdown for the frequency setting
 	public static function auto_order_cancellation_interval_input() {
 		$intervals = [
-			'minute' => 'Every Minute',
 			'hourly' => 'Hourly',
 			'twicedaily' => 'Twice Daily',
-			'daily' => 'Daily'
+			'daily' => 'Daily',
+			'weekly' => 'Weekly',
 		];
 		$selected_interval = get_option('auto_order_cancellation_interval', 'daily'); // Default to daily
 	
