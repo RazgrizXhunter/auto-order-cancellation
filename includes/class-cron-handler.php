@@ -37,11 +37,19 @@ class AOC_Cron_Handler {
 	public static function update_cron_schedule() {
 		// Clear all scheduled instances of the event
 		while (wp_next_scheduled('aoc_check_pending_orders')) {
+			$timestamp = wp_next_scheduled('aoc_check_pending_orders');
+			AOC_Log_Manager::write("Cron found. ($timestamp)");
+			AOC_Log_Manager::write("Trying to remove cron...");
 			$result = wp_clear_scheduled_hook('aoc_check_pending_orders');
+			AOC_Log_Manager::write("wp_clear_scheduled_hook: $result");
+			$timestamp = wp_next_scheduled('aoc_check_pending_orders');
+			AOC_Log_Manager::write("timestamp: $timestamp");
 		}
 	
 		// Get the new interval from settings
 		$interval = get_option('auto_order_cancellation_interval', 'daily'); // Default to daily
+		
+		AOC_Log_Manager::write("Cron tried to be rescheduled, new interval: $interval");
 	
 		// Schedule the cron event with the new interval
 		wp_schedule_event(time(), $interval, 'aoc_check_pending_orders');
