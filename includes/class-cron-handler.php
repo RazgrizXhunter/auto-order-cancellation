@@ -91,24 +91,6 @@ class AOC_Cron_Handler {
 	}
 }
 
-function aoc_custom_cron_intervals($schedules) {
-	// Adds an interval for every minute
-	$schedules['minute'] = [
-		'interval' => 60, // 1 minute in seconds
-		'display' => __('Every Minute')
-	];
-	
-	// Adds an interval for every 30 minutes (twice hourly)
-	$schedules['twice_hourly'] = [
-		'interval' => 1800, // 30 minutes in seconds
-		'display' => __('Every 30 Minutes')
-	];
-
-	return $schedules;
-}
-add_filter('cron_schedules', 'aoc_custom_cron_intervals');
-
-
 // Register the cron actions
 add_action('aoc_check_pending_orders', ['AOC_Cron_Handler', 'cancel_old_on_hold_orders']);
 add_action('aoc_log_cleanup', ['AOC_Log_Manager', 'cleanup_logs']);
