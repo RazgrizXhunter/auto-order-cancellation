@@ -1,9 +1,15 @@
 <?php
 /*
 Plugin Name: Auto Order Cancellation
+Plugin URI: https://github.com/RazgrizXhunter/auto-order-cancellation
 Description: Automatically cancels WooCommerce orders on hold for more than a specified time.
 Version: 1.2
+Requires at least: 5.4
+Requires PHP: 7.4
 Author: Aldo Tapia
+Author URI: https://github.com/RazgrizXhunter
+License: GPL v3
+License URI: https://raw.githubusercontent.com/RazgrizXhunter/auto-order-cancellation/refs/heads/main/LICENSE
 Text Domain: auto-order-cancellation
 Domain Path: /languages
 */
