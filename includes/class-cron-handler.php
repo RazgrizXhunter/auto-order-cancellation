@@ -21,24 +21,23 @@ class AOC_Cron_Handler {
 	// Hook to clear the cron events upon deactivation
 	public static function deactivate_cron() {
 		// Clear the aoc_check_pending_orders event
-		$timestamp_orders = wp_next_scheduled('aoc_check_pending_orders');
-		if ($timestamp_orders) {
-			wp_unschedule_event($timestamp_orders, 'aoc_check_pending_orders');
+		$is_orders_cron_scheduled = wp_next_scheduled('aoc_check_pending_orders') ? TRUE : FALSE;
+		if ($is_orders_cron_scheduled) {
+			wp_clear_scheduled_hook('aoc_check_pending_orders');
 		}
 
 		// Clear the aoc_log_cleanup event
-		$timestamp_cleanup = wp_next_scheduled('aoc_log_cleanup');
-		if ($timestamp_cleanup) {
-			wp_unschedule_event($timestamp_cleanup, 'aoc_log_cleanup');
+		$is_orders_cleanup_scheduled = wp_next_scheduled('aoc_log_cleanup') ? TRUE : FALSE;
+		if ($is_orders_cleanup_scheduled) {
+			wp_clear_scheduled_hook('aoc_log_cleanup');
 		}
 	}
 
 	// Hook to reschedule cron on settings update
 	public static function update_cron_schedule() {
-		// Clear existing cron event
-		$timestamp = wp_next_scheduled('aoc_check_pending_orders');
-		if ($timestamp) {
-			wp_unschedule_event($timestamp, 'aoc_check_pending_orders');
+		// Clear all scheduled instances of the event
+		while (wp_next_scheduled('aoc_check_pending_orders')) {
+			$result = wp_clear_scheduled_hook('aoc_check_pending_orders');
 		}
 	
 		// Get the new interval from settings
