@@ -9,7 +9,7 @@ class AOC_Cron_Handler {
 
 		// Schedule order cancellation check
 		if (!wp_next_scheduled('aoc_check_pending_orders')) {
-			wp_schedule_event(time(), $interval, 'aoc_check_pending_orders');
+			wp_schedule_event(time() + 30 * MINUTE_IN_SECONDS, $interval, 'aoc_check_pending_orders');
 		}
 
 		// Schedule daily log cleanup
